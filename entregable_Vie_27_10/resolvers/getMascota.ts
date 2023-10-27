@@ -4,7 +4,7 @@ import MascotaModel from "../db/mascota.ts";
 const getMascota = async (req: Request, res: Response) => {
     try {
         const { id } = req.params;
-        const mascota = await MascotaModel.findOne({ _id: id }).exec();
+        const mascota = await MascotaModel.findOne({ _id: id }).exec();// acuerdate de lo del id, que como es de mongo hay que poner _id
         if (!mascota) {
           res.status(404).send("Person not found");
           return;
